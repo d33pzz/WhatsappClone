@@ -19,7 +19,6 @@ import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
-import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import {
   RootStackParamList,
@@ -28,6 +27,7 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { Octicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import ChatScreen from "../screens/ChatScreen";
 
 export default function Navigation({
   colorScheme,
@@ -127,7 +127,7 @@ function MainTabNavigator() {
     >
       <MainTab.Screen
         name="Camera"
-        component={TabOneScreen}
+        component={TabTwoScreen}
         options={({ navigation }: RootTabScreenProps<"Camera">) => ({
           tabBarIcon: ({ color }) => <Fontisto name="camera" color={color} size={18} />,
           tabBarLabel: () => null,
@@ -150,7 +150,7 @@ function MainTabNavigator() {
       />
       <MainTab.Screen
         name="Chats"
-        component={TabTwoScreen}
+        component={ChatScreen}
         options={{
           title: "Chats",
         }}
