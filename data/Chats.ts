@@ -12,7 +12,7 @@ export default {
 	messages: [{
 		id: 'm1',
 		content: 'How are you, Lukas!',
-		createdAt: '2022-07-13T12:48:00.000Z',
+		createdAt: '2022-07-14T12:48:00.000Z',
 		user: {
 			id: 'u1',
 			name: 'Vadim',
@@ -20,7 +20,7 @@ export default {
 	}, {
 		id: 'm2',
 		content: 'I am good, good',
-		createdAt: '2022-07-13T14:49:00.000Z',
+		createdAt: '2022-07-14T14:49:00.000Z',
 		user: {
 			id: 'u2',
 			name: 'Lukas',
