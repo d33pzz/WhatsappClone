@@ -134,7 +134,40 @@ export default [{
     imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
   }, {
     id: 'u10',
-    name: 'Angelina Jolie',
+    name: 'Tom Cruise',
+    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/9.png',
+  }],
+  lastMessage: {
+    id: 'm9',
+    content: 'Meet me at the same place',
+    createdAt: '2020-09-25T15:40:00.000Z',
+  },
+},{
+  id: '10',
+  users: [{
+    id: 'u1',
+    name: 'Vadim',
+    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+  }, {
+    id: 'u10',
+    name: 'Brad Pit',
+    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/9.png',
+  }],
+  lastMessage: {
+    id: 'm9',
+    content: 'Meet me at the same place',
+    createdAt: '2020-09-25T15:40:00.000Z',
+  },
+},
+{
+  id: '11',
+  users: [{
+    id: 'u1',
+    name: 'Vadim',
+    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+  }, {
+    id: 'u10',
+    name: 'Mr. Bean',
     imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/9.png',
   }],
   lastMessage: {

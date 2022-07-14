@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import {
   NavigationContainer,
@@ -28,6 +28,7 @@ import {
 import LinkingConfiguration from "./LinkingConfiguration";
 import { Octicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import ChatScreen from "../screens/ChatScreen";
+import ChatRoomScreen from "../screens/ChatRoomScreen";
 
 export default function Navigation({
   colorScheme,
@@ -91,6 +92,36 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
       />
+      <Stack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={({ route }) => ({
+          title: route.params.name,
+          headerRight: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                width: 100,
+                justifyContent: "space-between",
+                marginRight: 10,
+              }}
+            >
+              <FontAwesome5 name="video" size={22} color="white" />
+              <MaterialIcons name="call" size={22} color="white" />
+              <MaterialCommunityIcons
+                name="dots-vertical"
+                size={22}
+                color="white"
+              />
+            </View>
+          ),
+          
+          headerStyle: {
+            backgroundColor: Colors.light.tint,
+          },
+          headerTintColor: Colors.light.background,
+        })}
+      />
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
@@ -129,7 +160,9 @@ function MainTabNavigator() {
         name="Camera"
         component={TabTwoScreen}
         options={({ navigation }: RootTabScreenProps<"Camera">) => ({
-          tabBarIcon: ({ color }) => <Fontisto name="camera" color={color} size={18} />,
+          tabBarIcon: ({ color }) => (
+            <Fontisto name="camera" color={color} size={18} />
+          ),
           tabBarLabel: () => null,
           headerRight: () => (
             <Pressable
