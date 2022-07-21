@@ -6,13 +6,14 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         margin: 10,
+        alignItems: "flex-end",
     },
     mainContainer: {
         flexDirection: "row",
         backgroundColor: "#ffffff",
         padding: 10,
-        borderRadius: 50,
-        alignItems: "center",
+        borderRadius: 25,
+        alignItems: "flex-end",
         marginRight: 10,
         flex: 1,
     },
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         backgroundColor: Colors.light.tint,
-        borderRadius: 50,
+        borderRadius: 25,
         justifyContent: "center",
         alignItems: "center",
         height: 50,
