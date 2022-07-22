@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "whatsappclone",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Projects\\Github\\React Native\\WhatsappClone\\amplify\\backend\\api\\whatsappclone\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authwhatsappclone69e437ac"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 300,
+        "apiKeyExpirationDate": "2023-05-17T12:50:44.523Z",
+        "keyDescription": "User Details"
+      }
+    ]
+  }
+}
