@@ -1,11 +1,33 @@
 import { FlatList, StyleSheet } from "react-native";
 
-import { Text, View } from "../components/Themed";
-import users from "../data/Users";
+import { View } from "../components/Themed";
+import {API} from "aws-amplify"
 import NewMessageButton from "../components/NewMessageButton";
 import ContactListItem from "../components/ContactListItem";
+import { useEffect, useState } from "react";
+
+import {listUsers} from "../src/graphql/queries";
 
 function Contacts() {
+
+  const [users, setUsers] =useState([]);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try{
+        const userData = await API.graphql({
+          query: listUsers,
+          authMode: "API_KEY",
+          authToken: "x4rdikhtibblbkgrqyykh3xtzq",
+        })
+
+        setUsers(userData.data.listUsers.items)
+      }catch(error){
+        console.log("Error from ContactScreen ",error );
+        
+      }
+    }
+    fetchUsers();
+  }, [])
   return (
     <View style={styles.container}>
       {/* <ChatListItem chatRoom={chatRooms[0]}/> */}
