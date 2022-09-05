@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet } from "react-native";
 
 import { View } from "../components/Themed";
-import {API} from "aws-amplify"
+import {API, graphqlOperation} from "aws-amplify"
 import NewMessageButton from "../components/NewMessageButton";
 import ContactListItem from "../components/ContactListItem";
 import { useEffect, useState } from "react";
@@ -14,11 +14,7 @@ function Contacts() {
   useEffect(() => {
     const fetchUsers = async () => {
       try{
-        const userData = await API.graphql({
-          query: listUsers,
-          authMode: "API_KEY",
-          authToken: "x4rdikhtibblbkgrqyykh3xtzq",
-        })
+        const userData = await API.graphql(graphqlOperation(listUsers))
 
         setUsers(userData.data.listUsers.items)
       }catch(error){

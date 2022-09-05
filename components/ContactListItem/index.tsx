@@ -15,6 +15,7 @@ const ContactListItem = (props: ContactListItemProps) => {
 
   const onClick =() => {
       //Navigate to the chatroom with this user
+      console.warn("Hello")
 
   }
   return (

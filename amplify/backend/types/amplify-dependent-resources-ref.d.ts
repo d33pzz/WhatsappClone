@@ -12,7 +12,6 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "api": {
         "whatsappclone": {
-            "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }

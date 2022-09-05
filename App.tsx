@@ -39,15 +39,19 @@ function App() {
       if (userInfo) {
         //get the user from Backend with userid from Auth
         
-        
+       
         const userData = await API.graphql(
-          {
-            query: getUser,
-            variables: { id: userInfo.attributes.sub },
-            authMode: "API_KEY",
-            authToken: "x4rdikhtibblbkgrqyykh3xtzq",
-          }
+          graphqlOperation(getUser, {id: userInfo.attributes.sub})
+          // {
+          //   query: getUser,
+          //   variables: { id: userInfo.attributes.sub },
+          //   authMode: "API_KEY",
+          //   authToken: "x4rdikhtibblbkgrqyykh3xtzq",
+          // }
         );
+        console.log('====================================');
+        console.log("Hi D33PZZ", userData);
+        console.log('====================================');
           
         if (userData.data.getUser) {
           console.log("User is already registered in database");
